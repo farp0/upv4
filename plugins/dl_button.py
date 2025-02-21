@@ -150,7 +150,7 @@ async def ddl_call_back(bot, update):
             if tg_send_type == "audio":
                 duration = await Mdata03(download_directory)
                 thumbnail = await Gthumb01(bot, update)
-                await audio.forward(Config.LOG_CHANNEL)
+                await audio.message.forward(Config.LOG_CHANNEL)
                 await update.message.reply_audio(
                     audio=download_directory,
                     caption=description,
@@ -167,7 +167,7 @@ async def ddl_call_back(bot, update):
             elif tg_send_type == "vm":
                 width, duration = await Mdata02(download_directory)
                 thumbnail = await Gthumb02(bot, update, duration, download_directory)
-                vm = await video_note.forward(Config.LOG_CHANNEL)
+                vm = await video_note.message.forward(Config.LOG_CHANNEL)
                 await update.message.reply_video_note(
                     video_note=download_directory,
                     duration=duration,
