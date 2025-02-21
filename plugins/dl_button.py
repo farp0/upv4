@@ -84,6 +84,7 @@ async def ddl_call_back(bot, update):
                 update.message.chat.id,
                 update.message.id,
                 c_time
+            )
               async with session.get(url, timeout=Config.PROCESS_MAX_TIMEOUT) as response:
         total_length = int(response.headers["Content-Length"])
         content_type = response.headers["Content-Type"]
