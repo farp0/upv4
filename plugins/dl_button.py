@@ -161,8 +161,8 @@ async def ddl_call_back(bot, update):
                         Translation.UPLOAD_START,
                         update.message,
                         start_time
-                   await audio.forward(Config.LOG_CHANNEL)
                     )
+                   await audio.forward(Config.LOG_CHANNEL)
                 )
             elif tg_send_type == "vm":
                 width, duration = await Mdata02(download_directory)
@@ -177,8 +177,8 @@ async def ddl_call_back(bot, update):
                         Translation.UPLOAD_START,
                         update.message,
                         start_time
-               vm = await video_note.forward(Config.LOG_CHANNEL)
                     )
+                   vm = await video_note.forward(Config.LOG_CHANNEL)
                 )
             else:
                 logger.info("Did this happen? :\\")
