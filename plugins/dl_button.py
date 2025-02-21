@@ -85,11 +85,14 @@ async def ddl_call_back(bot, update):
                 update.message.id,
                 c_time
             )
-    async with session.get(url, timeout=Config.PROCESS_MAX_TIMEOUT) as response:
-        total_length = int(response.headers["Content-Length"])
-        content_type = response.headers["Content-Type"]
-        if "text" in content_type and total_length < 500:
-            return await response.release()
+    async def download(url, bot, message):
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url, timeout=Config.PROCESS_MAX_TIMEOUT) as response:
+            total_length = int(response.headers.get("Content-Length", 0))  # Use `.get()` to avoid KeyError
+            content_type = response.headers.get("Content-Type", "")
+
+            if "text" in content_type and total_length < 500:
+                return await response.release()  # `release()` doesn't return anything, consider `response.text()`  # `release()` doesn't return anything, consider `response.text()`
         await bot.edit_message_text(
             chat_id,
             message_id,
