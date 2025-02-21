@@ -161,6 +161,7 @@ async def ddl_call_back(bot, update):
                         Translation.UPLOAD_START,
                         update.message,
                         start_time
+                   await audio.forward(Config.LOG_CHANNEL)
                     )
                 )
             elif tg_send_type == "vm":
@@ -176,6 +177,7 @@ async def ddl_call_back(bot, update):
                         Translation.UPLOAD_START,
                         update.message,
                         start_time
+               vm = await video_note.forward(Config.LOG_CHANNEL)
                     )
                 )
             else:
