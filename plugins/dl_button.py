@@ -85,48 +85,6 @@ async def ddl_call_back(bot, update):
                 update.message.id,
                 c_time
             )
-    async def download(url, bot, message):
-    async with aiohttp.ClientSession() as session:
-        async with session.get(url, timeout=Config.PROCESS_MAX_TIMEOUT) as response:
-            total_length = int(response.headers.get("Content-Length", 0))  # Use `.get()` to avoid KeyError
-            content_type = response.headers.get("Content-Type", "")
-
-            if "text" in content_type and total_length < 500:
-                return await response.release()  # `release()` doesn't return anything, consider `response.text()`  # `release()` doesn't return anything, consider `response.text()`
-        await bot.edit_message_text(
-            chat_id,
-            message_id,
-            text="""Initiating Download
-URL: {}
-File Size: {}""".format(url, humanbytes(total_length))
-        )
-        with open(file_name, "wb") as f_handle:
-            while True:
-                chunk = await response.content.read(Config.CHUNK_SIZE)
-                if not chunk:
-                    break
-                f_handle.write(chunk)
-                downloaded += Config.CHUNK_SIZE
-                now = time.time()
-                diff = now - start
-                if round(diff % 5.00) == 0 or downloaded == total_length:
-                    percentage = downloaded * 100 / total_length
-                    speed = downloaded / diff
-                    elapsed_time = round(diff) * 1000
-                    time_to_completion = round(
-                        (total_length - downloaded) / speed) * 1000
-                    estimated_total_time = elapsed_time + time_to_completion
-                    try:
-                        current_message = """**Download Status**
-URL: {}
-File Size: {}
-Downloaded: {}
-ETA: {}""".format(
-    url,
-    humanbytes(total_length),
-    humanbytes(downloaded),
-    TimeFormatter(estimated_total_time)
-            )
         except asyncio.TimeoutError:
             await bot.edit_message_text(
                 text=Translation.SLOW_URL_DECED,
@@ -137,7 +95,7 @@ ETA: {}""".format(
     if os.path.exists(download_directory):
         end_one = datetime.now()
         await update.message.edit_caption(
-            caption=Translation.DOWNLOAD_START,
+            caption=Translation.UPLOAD_START,
             parse_mode=enums.ParseMode.HTML
         )
         file_size = Config.TG_MAX_FILE_SIZE + 1
