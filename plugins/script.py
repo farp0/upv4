@@ -51,7 +51,10 @@ Usᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴋɴᴏᴡ ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍ
 """
 
     PROGRES = """
-`{}`\n{}"""
+{}
+{}
+
+**Powered by @phu_kdet**"""
 
 
     INFO_TEXT = """
