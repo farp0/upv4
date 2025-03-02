@@ -147,7 +147,12 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                await message.forward(Config.LOG_CHANNEL)
+                print(f"DEBUG: message = {message}")  # បង្ហាញ message នៅក្នុង log
+
+                if message:
+                   await message.forward(Config.LOG_CHANNEL)
+                else:
+                     print("ERROR: message is None!")
             if tg_send_type == "audio":
                 duration = await Mdata03(download_directory)
                 thumbnail = await Gthumb01(bot, update)
@@ -180,7 +185,12 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                await message.forward(Config.LOG_CHANNEL)
+                 print(f"DEBUG: message = {message}")  # បង្ហាញ message នៅក្នុង log
+
+                if message:
+                   await message.forward(Config.LOG_CHANNEL)
+                else:
+                     print("ERROR: message is None!")
             else:
                 logger.info("Did this happen? :\\")
             end_two = datetime.now()
