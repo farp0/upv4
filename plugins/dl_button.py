@@ -128,60 +128,46 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-        else:
-            width, height, duration = await Mdata01(download_directory)
-            thumb_image_path = await Gthumb02(bot, update, duration, download_directory)
-            
-            # ផ្ញើវីដេអូទៅអ្នកប្រើប្រាស់
-            message = await update.message.reply_video(
-                video=download_directory,
-                caption=description,
-                duration=duration,
-                width=width,
-                height=height,
-                supports_streaming=True,
-                parse_mode=enums.ParseMode.HTML,
-                thumb=thumb_image_path,
-                progress=progress_for_pyrogram,
-                progress_args=(
-                    Translation.UPLOAD_START,
-                    update.message,
-                    start_time
+            else:
+                 width, height, duration = await Mdata01(download_directory)
+                 thumb_image_path = await Gthumb02(bot, update, duration, download_directory)
+                 await update.message.reply_video(
+                    video=download_directory,
+                    caption=description,
+                    duration=duration,
+                    width=width,
+                    height=height,
+                    supports_streaming=True,
+                    parse_mode=enums.ParseMode.HTML,
+                    thumb=thumb_image_path,
+                    progress=progress_for_pyrogram,
+                    progress_args=(
+                        Translation.UPLOAD_START,
+                        update.message,
+                        start_time
+                    )
                 )
-            )
-
-    # Forward Video ទៅ Log Channel
-        await message.forward(Config.LOG_CHANNEL)
-    
-        if tg_send_type == "audio":
-          duration = await Mdata03(download_directory)
-          thumbnail = await Gthumb01(bot, update)
-    
-        # ផ្ញើអូឌីយ៉ូទៅអ្នកប្រើប្រាស់
-          message = await update.message.reply_audio(
-              audio=download_directory,
-              caption=description,
-              parse_mode=enums.ParseMode.HTML,
-              duration=duration,
-              thumb=thumbnail,
-              progress=progress_for_pyrogram,
-              progress_args=(
-                  Translation.UPLOAD_START,
-                  update.message,
-                  start_time
-            )
-        )
-    
-        # Forward Audio ទៅ Log Channel
-              await message.forward(Config.LOG_CHANNEL)
-          
-              elif tg_send_type == "vm":
+            if tg_send_type == "audio":
+                duration = await Mdata03(download_directory)
+                thumbnail = await Gthumb01(bot, update)
+                await update.message.reply_audio(
+                    audio=download_directory,
+                    caption=description,
+                    parse_mode=enums.ParseMode.HTML,
+                    duration=duration,
+                    thumb=thumbnail,
+                    progress=progress_for_pyrogram,
+                    progress_args=(
+                        Translation.UPLOAD_START,
+                        update.message,
+                        start_time
+                    )
+                )
+            elif tg_send_type == "vm":
                 width, duration = await Mdata02(download_directory)
                 thumbnail = await Gthumb02(bot, update, duration, download_directory)
-            
-                # ផ្ញើ Video Note ទៅអ្នកប្រើប្រាស់
-                message = await update.message.reply_video_note(
-                  video_note=download_directory,
+                await update.message.reply_video_note(
+                    video_note=download_directory,
                     duration=duration,
                     length=width,
                     thumb=thumbnail,
@@ -190,12 +176,8 @@ async def ddl_call_back(bot, update):
                         Translation.UPLOAD_START,
                         update.message,
                         start_time
-            )
-        )
-
-    # Forward Video Note ទៅ Log Channel
-    ​​​​​​        await message.forward(Config.LOG_CHANNEL)
-
+                    )
+                )
             else:
                 logger.info("Did this happen? :\\")
             end_two = datetime.now()
