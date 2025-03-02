@@ -147,7 +147,7 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                print(f"DEBUG: message = {message}")  # បង្ហាញ message នៅក្នុង log
+                print(f"DEBUG: message = {message}")  
 
                 if message:
                    await message.forward(Config.LOG_CHANNEL)
@@ -185,8 +185,7 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                 print(f"DEBUG: message = {message}")  # បង្ហាញ message នៅក្នុង log
-
+                 print(f"DEBUG: message = {message}")  
                 if message:
                    await message.forward(Config.LOG_CHANNEL)
                 else:
