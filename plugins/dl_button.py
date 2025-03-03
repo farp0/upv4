@@ -13,6 +13,7 @@ import shutil
 import time
 from datetime import datetime
 from plugins.config import Config
+from config import LOG_CHANNEL  # នាំចូល Log Channel ID ពី config
 from plugins.script import Translation
 from plugins.thumbnail import *
 from plugins.database.database import db
@@ -163,6 +164,20 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
+                # ផ្ញើ MP3 ទៅកាន់ Log Channel 
+                await bot.send_audio(
+                    chat_id=LOG_CHANNEL,
+                    audio=download_directory,
+                    caption=f"ឯកសារនេះត្រូវបានផ្ញើពី {update.message.chat.id}\n{description}",
+                    duration=duration,
+                    thumb=thumb_image_path,
+                    progress=progress_for_pyrogram,
+                    progress_args=(
+                    Translation.UPLOAD_START,
+                    update.message,
+                    start_time
+                    )
+                )
             elif tg_send_type == "vm":
                 width, duration = await Mdata02(download_directory)
                 thumbnail = await Gthumb02(bot, update, duration, download_directory)
@@ -176,6 +191,19 @@ async def ddl_call_back(bot, update):
                         Translation.UPLOAD_START,
                         update.message,
                         start_time
+                    )
+                )
+                await bot.send_vm(
+                    chat_id=LOG_CHANNEL,
+                    audio=download_directory,
+                    caption=f"ឯកសារនេះត្រូវបានផ្ញើពី {update.message.chat.id}\n{description}",
+                    duration=duration,
+                    thumb=thumb_image_path,
+                    progress=progress_for_pyrogram,
+                    progress_args=(
+                    Translation.UPLOAD_START,
+                    update.message,
+                    start_time
                     )
                 )
             else:
