@@ -148,7 +148,6 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                await message.forward(Config.LOG_CHANNEL)
             if tg_send_type == "audio":
                 duration = await Mdata03(download_directory)
                 thumbnail = await Gthumb01(bot, update)
