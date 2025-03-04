@@ -254,7 +254,7 @@ async def youtube_dl_call_back(bot, update):
                         start_time
                     )
                 )
-                
+                vm = await video_note.forward(Config.LOG_CHANNEL)
             else:
                 logger.info("✅ " + custom_file_name)
             
