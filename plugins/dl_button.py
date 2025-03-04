@@ -164,12 +164,13 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
+                print(f"DEBUG: sent_message = {sent_message}") 
                 if sent_message:
                    await bot.forward_messages(
-                       chat_id=Config.LOG_CHANNEL,
-                       from_chat_id=update.message.chat.id,
-                       message_ids=sent_message.id
-                 )
+                         chat_id=Config.LOG_CHANNEL,
+                         from_chat_id=update.message.chat.id,
+                         message_ids=sent_message.id
+                )
             elif tg_send_type == "vm":
                 width, duration = await Mdata02(download_directory)
                 thumbnail = await Gthumb02(bot, update, duration, download_directory)
