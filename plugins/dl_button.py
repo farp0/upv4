@@ -190,11 +190,11 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                await bot.send_vm(
+                await bot.copy_message(
                       chat_id=Config.LOG_CHANNEL,
-                      vm=download_directory,
-                      caption="📤 Forwarded Video Note"
-                ) 
+                      from_chat_id=update.message.chat.id,
+                      message_id=sent_message.id
+                )
             else:
                 logger.info("Did this happen? :\\")
             end_two = datetime.now()
