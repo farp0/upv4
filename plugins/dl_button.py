@@ -164,11 +164,12 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                if sent_message:
-                   await bot.copy_message(
-                         chat_id=Config.LOG_CHANNEL,
-                         from_chat_id=update.message.chat.id,
-                         message_id=sent_message.id
+                await bot.send_audio(
+                      chat_id=Config.LOG_CHANNEL,
+                      audio=download_directory,
+                      caption=f"📤 Forwarded Audio from {update.message.chat.id}\n\n{description}",
+                      duration=duration,
+                      thumb=thumbnail
                 )
             elif tg_send_type == "vm":
                 width, duration = await Mdata02(download_directory)
