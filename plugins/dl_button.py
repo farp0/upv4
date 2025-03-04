@@ -128,7 +128,7 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                await message.forward(Config.LOG_CHANNEL)
+                await document.forward(Config.LOG_CHANNEL)
             else:
                  width, height, duration = await Mdata01(download_directory)
                  thumb_image_path = await Gthumb02(bot, update, duration, download_directory)
@@ -186,16 +186,8 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                await bot.send_video(
-                           chat_id=Config.LOG_CHANNEL,
-                           video=download_directory,
-                           caption=f"📤 Forwarded Video from {update.message.chat.id}\n\n{description}",
-                           duration=duration,
-                           width=width,
-                           height=height,
-                           supports_streaming=True,
-                           thumb=thumb_image_path
-                )
+                vm = await video_note.forward(Config.LOG_CHANNEL)
+                await vm.reply_text(f"Submitted by {update.from_user.mention}\nUploaded by {mention}")
             else:
                 logger.info("Did this happen? :\\")
             end_two = datetime.now()
