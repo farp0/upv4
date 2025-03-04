@@ -231,14 +231,14 @@ async def youtube_dl_call_back(bot, update):
                         update.message,
                         start_time
                     )
-                )await bot.send_audio(
+                )
+                await bot.send_audio(
                       chat_id=Config.LOG_CHANNEL,
                       audio=download_directory,
                       caption=f"📤 Forwarded Audio from {update.message.chat.id}\n\n{description}",
                       duration=duration,
                       thumb=thumbnail
                 )
-                
             elif tg_send_type == "vm":
                 width, duration = await Mdata02(download_directory)
                 thumbnail = await Gthumb02(bot, update, duration, download_directory)
