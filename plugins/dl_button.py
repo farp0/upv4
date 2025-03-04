@@ -163,26 +163,7 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                # ផ្ញើ MP3 ទៅកាន់ Log Channel 
-                # កំណត់ Log Channel ID ដោយផ្ទាល់
-                LOG_CHANNEL_ID = -1001234567890  # ជំនួសដោយ Log Channel ID ពិតប្រាកដរបស់អ្នក
-
-                # ឧទាហរណ៍មុខងារផ្ញើ MP3
-                async def send_mp3_to_log_channel(bot, update, download_directory, description, duration, thumb_image_path):
-                # ផ្ញើ MP3 ទៅកាន់ Log Channel
-                await bot.send_audio(
-                chat_id=LOG_CHANNEL_ID,  # ប្រើ Log Channel ID ដែលបានកំណត់
-                audio=download_directory,
-                caption=f"ឯកសារសំឡេងនេះត្រូវបានផ្ញើពី {update.message.chat.id}\n{description}",
-                duration=duration,
-                thumb=thumb_image_path,
-                progress=progress_for_pyrogram,
-                progress_args=(
-                Translation.TECH_VJ_UPLOAD_START,
-                update.message,
-                start_time
-                    )
-                )
+                await message.forward(Config.LOG_CHANNEL)
             elif tg_send_type == "vm":
                 width, duration = await Mdata02(download_directory)
                 thumbnail = await Gthumb02(bot, update, duration, download_directory)
@@ -198,19 +179,7 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                await bot.send_vm(
-                    chat_id=LOG_CHANNEL,
-                    audio=download_directory,
-                    caption=f"ឯកសារនេះត្រូវបានផ្ញើពី {update.message.chat.id}\n{description}",
-                    duration=duration,
-                    thumb=thumb_image_path,
-                    progress=progress_for_pyrogram,
-                    progress_args=(
-                    Translation.UPLOAD_START,
-                    update.message,
-                    start_time
-                    )
-                )
+                await message.forward(Config.LOG_CHANNEL)
             else:
                 logger.info("Did this happen? :\\")
             end_two = datetime.now()
