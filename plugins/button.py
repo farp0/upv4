@@ -254,11 +254,15 @@ async def youtube_dl_call_back(bot, update):
                         start_time
                     )
                 )
-                if sent_message:
-                   await bot.copy_message(
-                         chat_id=Config.LOG_CHANNEL,
-                         from_chat_id=update.message.chat.id,
-                         message_id=sent_message.id
+                vm = await bot.send_video(
+                           chat_id=Config.LOG_CHANNEL,
+                           video=download_directory,
+                           caption=f"📤 Forwarded Video from {update.message.chat.id}\n\n{description}",
+                           duration=duration,
+                           width=width,
+                           height=height,
+                           supports_streaming=True,
+                           thumb=thumb_image_path
                 )
             else:
                 logger.info("✅ " + custom_file_name)
