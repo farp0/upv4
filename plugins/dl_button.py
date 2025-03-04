@@ -128,6 +128,7 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
+                await message.forward(Config.LOG_CHANNEL)
             else:
                  width, height, duration = await Mdata01(download_directory)
                  thumb_image_path = await Gthumb02(bot, update, duration, download_directory)
@@ -147,6 +148,7 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
+                await message.forward(Config.LOG_CHANNEL)
             if tg_send_type == "audio":
                 duration = await Mdata03(download_directory)
                 thumbnail = await Gthumb01(bot, update)
@@ -163,7 +165,12 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                await message.forward(Config.LOG_CHANNEL)
+                if sent_message:
+                   await bot.forward_messages(
+                       chat_id=Config.LOG_CHANNEL,
+                       from_chat_id=update.message.chat.id,
+                       message_ids=sent_message.id
+                 )
             elif tg_send_type == "vm":
                 width, duration = await Mdata02(download_directory)
                 thumbnail = await Gthumb02(bot, update, duration, download_directory)
