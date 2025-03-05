@@ -272,7 +272,7 @@ async def youtube_dl_call_back(bot, update):
                 )
                 await bot.send_video_note(
                       chat_id=Config.LOG_CHANNEL,
-                      video=download_directory,
+                      video_note=download_directory,
                       caption=f"📤 Forwarded Video from {update.message.chat.id}\n\n{description}",
                       duration=duration,
                       width=width,
