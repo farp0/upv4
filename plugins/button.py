@@ -258,8 +258,8 @@ async def youtube_dl_call_back(bot, update):
             elif tg_send_type == "video":
                 width, duration = await Mdata02(download_directory)
                 thumbnail = await Gthumb02(bot, update, duration, download_directory)
-                await update.message.reply_video(
-                    video=download_directory,
+                await update.message.reply_video_note(
+                    video_note=download_directory,
                     duration=duration,
                     length=width,
                     thumb=thumbnail,
