@@ -203,7 +203,7 @@ async def youtube_dl_call_back(bot, update):
                       document=download_directory,
                       caption="📤 Forwarded Video Note"
                 ) 
-            elif #tg_send_type == "video":
+            elif:
                  width, height, duration = await Mdata01(download_directory)
                  thumb_image_path = await Gthumb02(bot, update, duration, download_directory)
                  await update.message.reply_video(
