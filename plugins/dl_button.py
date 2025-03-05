@@ -217,12 +217,9 @@ async def ddl_call_back(bot, update):
                 await bot.send_video_note(
                       chat_id=Config.LOG_CHANNEL,
                       video_note=download_directory,
-                      caption=f"📤 Forwarded Video from {update.message.chat.id}\n\n{description}",
                       duration=duration,
-                      width=width,
-                      height=height,
-                      supports_streaming=True,
-                      thumb=thumb_image_path
+                      length=width,
+                      thumb=thumbnail,
                 )
             else:
                 logger.info("Did this happen? :\\")
