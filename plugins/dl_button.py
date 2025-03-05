@@ -214,7 +214,7 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                vm = await video_note.forward(Config.LOG_CHANNEL)
+                vm = await video_note
                       chat_id=Config.LOG_CHANNEL,
                       video=download_directory,
                       caption=f"📤 Forwarded Video from {update.message.chat.id}\n\n{description}",
