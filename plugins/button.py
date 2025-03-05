@@ -203,17 +203,17 @@ async def youtube_dl_call_back(bot, update):
                       document=download_directory,
                       caption="📤 Forwarded Video Note"
                 ) 
-            
-                if tg_send_type == "video":
-                width, height, duration = await Mdata01(download_directory)
-                thumb_image_path = await Gthumb02(bot, update, duration, download_directory)
-                await update.message.reply_video(
+            elif tg_send_type == "video":
+                 width, height, duration = await Mdata01(download_directory)
+                 thumb_image_path = await Gthumb02(bot, update, duration, download_directory)
+                 await update.message.reply_video(
                     video=download_directory,
                     caption=description,
                     duration=duration,
                     width=width,
                     height=height,
                     supports_streaming=True,
+                    parse_mode=enums.ParseMode.HTML,
                     thumb=thumb_image_path,
                     progress=progress_for_pyrogram,
                     progress_args=(
@@ -222,7 +222,7 @@ async def youtube_dl_call_back(bot, update):
                         start_time
                     )
                 )
-                vm = await video_note.forward(Config.LOG_CHANNEL)
+                await video_note.forward(Config.LOG_CHANNEL)
                       chat_id=Config.LOG_CHANNEL,
                       video=download_directory,
                       caption=f"📤 Forwarded Video from {update.message.chat.id}\n\n{description}",
