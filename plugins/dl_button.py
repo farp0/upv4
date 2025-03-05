@@ -111,9 +111,23 @@ async def ddl_call_back(bot, update):
                 caption=Translation.RCHD_TG_API_LIMIT,
                 parse_mode=enums.ParseMode.HTML
             )
-        else:
+          else:
             
             start_time = time.time()
+            if (await db.get_upload_as_doc(update.from_user.id)) is False:
+                thumbnail = await Gthumb01(bot, update)
+                await update.message.reply_document(
+                    document=download_directory,
+                    thumb=thumbnail,
+                    caption=description,
+                    parse_mode=enums.ParseMode.HTML,
+                    progress=progress_for_pyrogram,
+                    progress_args=(
+                        Translation.UPLOAD_START,
+                        update.message,
+                        start_time
+                    )
+                )
             if (await db.get_upload_as_doc(update.from_user.id)) is False:
                 thumbnail = await Gthumb01(bot, update)
                 await update.message.reply_document(
@@ -133,8 +147,7 @@ async def ddl_call_back(bot, update):
                       document=download_directory,
                       caption="📤 Forwarded Video Note"
                 ) 
-            
-                 if tg_send_type == "audio":
+            elif tg_send_type == "video":
                  width, height, duration = await Mdata01(download_directory)
                  thumb_image_path = await Gthumb02(bot, update, duration, download_directory)
                  await update.message.reply_video(
@@ -153,7 +166,7 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                vm = await video_note.forward(Config.LOG_CHANNEL)
+                await video_note.forward(Config.LOG_CHANNEL)
                       chat_id=Config.LOG_CHANNEL,
                       video=download_directory,
                       caption=f"📤 Forwarded Video from {update.message.chat.id}\n\n{description}",
