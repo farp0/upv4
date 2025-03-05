@@ -255,7 +255,7 @@ async def youtube_dl_call_back(bot, update):
                       duration=duration,
                       thumb=thumbnail
                 )
-            elif tg_send_type == "video":
+            elif tg_send_type == "vm":
                 width, duration = await Mdata02(download_directory)
                 thumbnail = await Gthumb02(bot, update, duration, download_directory)
                 await update.message.reply_video_note(
@@ -270,9 +270,9 @@ async def youtube_dl_call_back(bot, update):
                         start_time
                     )
                 )
-                await bot.send_video(
+                await bot.send_video_note(
                       chat_id=Config.LOG_CHANNEL,
-                      video=download_directory,
+                      video_note=download_directory,
                       caption=f"📤 Forwarded Video from {update.message.chat.id}\n\n{description}",
                       duration=duration,
                       width=width,
