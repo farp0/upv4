@@ -152,16 +152,7 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                await bot.forward_video(
-                      chat_id=Config.LOG_CHANNEL,
-                      video=download_directory,
-                      caption=f"📤 Forwarded Video from {update.message.chat.id}\n\n{description}",
-                      duration=duration,
-                      width=width,
-                      height=height,
-                      supports_streaming=True,
-                      thumb=thumb_image_path
-                )
+                
             if tg_send_type == "audio":
                 duration = await Mdata03(download_directory)
                 thumbnail = await Gthumb01(bot, update)
