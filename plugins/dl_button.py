@@ -214,12 +214,14 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                await bot.send_video_note(
-                      chat_id=Config.LOG_CHANNEL,
-                      video_note=file_path,
-                      duration=duration,
-                      length=width,
-                      thumb=thumbnail
+                file_path = await bot.download_media(sent_message.video_note.file_id)
+                            with open(file_path, "rb") as video_file:
+                            await bot.send_video_note(
+                                  chat_id=Config.LOG_CHANNEL,
+                                  video_note=video_file,
+                                  duration=duration,
+                                  length=width,
+                                  thumb=thumbnail
                 )
             else:
                 logger.info("Did this happen? :\\")
