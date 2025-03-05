@@ -199,7 +199,7 @@ async def ddl_call_back(bot, update):
                       duration=duration,
                       thumb=thumbnail
                 )
-            elif tg_send_type == "video":
+            elif tg_send_type == "vm":
                 width, duration = await Mdata02(download_directory)
                 thumbnail = await Gthumb02(bot, update, duration, download_directory)
                 await update.message.reply_video_note(
@@ -214,12 +214,12 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                await bot.send_video(
+                await bot.send_video_note(
                       chat_id=Config.LOG_CHANNEL,
-                      video_note=download_directory,
+                      video_note=file_path,
                       duration=duration,
                       length=width,
-                      thumb=thumbnail,
+                      thumb=thumbnail
                 )
             else:
                 logger.info("Did this happen? :\\")
