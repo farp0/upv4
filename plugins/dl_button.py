@@ -134,6 +134,7 @@ async def ddl_call_back(bot, update):
                       caption="📤 Forwarded Video Note"
                 ) 
             else:
+                 elif tg_send_type == "video":
                  width, height, duration = await Mdata01(download_directory)
                  thumb_image_path = await Gthumb02(bot, update, duration, download_directory)
                  await update.message.reply_video(
@@ -191,7 +192,7 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                await bot.send_video_note(
+                vm = await video_note.forward(Config.LOG_CHANNEL)
                       chat_id=Config.LOG_CHANNEL,
                       video=download_directory,
                       caption=f"📤 Forwarded Video from {update.message.chat.id}\n\n{description}",
