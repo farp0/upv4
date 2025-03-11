@@ -81,7 +81,6 @@ async def ddl_call_back(bot, update):
                 session,
                 youtube_dl_url,
                 download_directory,
-                progress=progress_for_pyrogram,
                 update.message.chat.id,
                 update.message.id,
                 c_time
