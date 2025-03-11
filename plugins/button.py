@@ -82,7 +82,7 @@ async def youtube_dl_call_back(bot, update):
         progress_args=(
               Translation.UPLOAD_START,
                         update.message,
-                        start_time
+                       # start_time
         #caption=Translation.DOWNLOAD_START.format(custom_file_name)
         )
     )
