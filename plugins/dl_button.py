@@ -214,7 +214,7 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                await bot.send_message(
+                vm =await bot.send_message(
                       video_note=download_directory,
                       duration=duration,
                       length=width,
