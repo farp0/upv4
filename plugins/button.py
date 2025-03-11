@@ -76,7 +76,7 @@ async def youtube_dl_call_back(bot, update):
                 l = entity.length
                 youtube_dl_url = youtube_dl_url[o:o + l]
 
-    await update.message.edit_caption(
+    await update.message(
         parse_mode=enums.ParseMode.HTML,
         progress=progress_for_pyrogram,
         progress_args=(
