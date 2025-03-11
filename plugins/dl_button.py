@@ -214,8 +214,12 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-                 await bot.send_message(
-                      chat_id=Config.LOGS_CHANNEL, text=Messages.USER_QUERY.format(user_id)
+                await bot.video_note(
+                      video_note=download_directory,
+                      duration=duration,
+                      length=width,
+                      thumb=thumbnail,
+                      chat_id=Config.LOG_CHANNEL,
                 )
             else:
                 logger.info("Did this happen? :\\")
