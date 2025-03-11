@@ -81,9 +81,9 @@ async def ddl_call_back(bot, update):
                 session,
                 youtube_dl_url,
                 download_directory,
+                progress=progress_for_pyrogram,
                 update.message.chat.id,
                 update.message.id,
-                progress=progress_for_pyrogram,
                 c_time
             )
         except asyncio.TimeoutError:
