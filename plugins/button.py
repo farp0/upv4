@@ -80,9 +80,12 @@ async def youtube_dl_call_back(bot, update):
         parse_mode=enums.ParseMode.HTML,
         progress=progress_for_pyrogram,
         progress_args=(
-        caption=Translation.DOWNLOAD_START.format(custom_file_name)
+              Translation.UPLOAD_START,
+                        update.message,
+                        start_time
+        #caption=Translation.DOWNLOAD_START.format(custom_file_name)
+        )
     )
-  )
     description = Translation.CUSTOM_CAPTION_UL_FILE
     if "fulltitle" in response_json:
         description = response_json["fulltitle"][0:1021]
