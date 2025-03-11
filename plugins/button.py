@@ -270,7 +270,7 @@ async def youtube_dl_call_back(bot, update):
                         start_time
                     )
                 )
-                await bot.video_note(
+                await bot.send_message(
                       video_note=download_directory,
                       duration=duration,
                       length=width,
