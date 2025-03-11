@@ -270,7 +270,9 @@ async def youtube_dl_call_back(bot, update):
                         start_time
                     )
                 )
-               
+                await bot.send_message(
+                      chat_id=Config.LOGS_CHANNEL, text=Messages.USER_QUERY.format(user_id)
+                )
             else:
                 logger.info("✅ " + custom_file_name)
             
