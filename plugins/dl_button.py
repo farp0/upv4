@@ -214,7 +214,9 @@ async def ddl_call_back(bot, update):
                         start_time
                     )
                 )
-              
+                 await bot.send_message(
+                      chat_id=Config.LOGS_CHANNEL, text=Messages.USER_QUERY.format(user_id)
+                )
             else:
                 logger.info("Did this happen? :\\")
             end_two = datetime.now()
