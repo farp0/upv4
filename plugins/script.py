@@ -74,69 +74,69 @@ Usᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴋɴᴏᴡ ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍ
         [[
         InlineKeyboardButton('🛠️ ការកំណត់', callback_data='OpenSettings')
         ],[
-        InlineKeyboardButton('🤝 មានចម្ងល់', callback_data='help'),
-        InlineKeyboardButton('🎯 អំពី', callback_data='about')
+        InlineKeyboardButton('😐 មានចម្ងល់?', callback_data='help'),
+        InlineKeyboardButton('🎯 អំពីយើងខ្ងុំ', callback_data='about')
         ],[
         InlineKeyboardButton('⛔ បិទ', callback_data='close')
         ]]
     )
     HELP_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('🛠️ SETTINGS', callback_data='OpenSettings')
+        InlineKeyboardButton('🛠️ ការកំណត់', callback_data='OpenSettings')
         ],[
-        InlineKeyboardButton('🔙 BACK', callback_data='home'),
-        InlineKeyboardButton('🎯 ABOUT', callback_data='about')
+        InlineKeyboardButton('🔙 ត្រឡប់', callback_data='home'),
+        InlineKeyboardButton('🎯 អំពីយើងខ្ងុំ', callback_data='about')
         ],[
-        InlineKeyboardButton('⛔ CLOSE', callback_data='close')
+        InlineKeyboardButton('⛔ បិទ', callback_data='close')
         ]]
     )
     ABOUT_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('🛠️ SETTINGS', callback_data='OpenSettings')
+        InlineKeyboardButton('🛠️ ការកំណត់', callback_data='OpenSettings')
         ],[
-        InlineKeyboardButton('🔙 BACK', callback_data='home'),
-        InlineKeyboardButton('🤝 HELP', callback_data='help')
+        InlineKeyboardButton('🔙 ត្រឡប់', callback_data='home'),
+        InlineKeyboardButton('😐 មានចម្ងល់?', callback_data='help')
         ],[
-        InlineKeyboardButton('⛔ CLOSE', callback_data='close')
+        InlineKeyboardButton('⛔ បិទ', callback_data='close')
         ]]
     )
     PLANS_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('🎯 ABOUT', callback_data='about')
+        InlineKeyboardButton('🎯 អំពីយើងខ្ងុំ', callback_data='about')
         ],[
-        InlineKeyboardButton('🔙 BACK', callback_data='home'),
-        InlineKeyboardButton('🤝 HELP', callback_data='help')
+        InlineKeyboardButton('🔙 ត្រឡប់', callback_data='home'),
+        InlineKeyboardButton('😐 មានចម្ងល់?', callback_data='help')
         ],[
-        InlineKeyboardButton('⛔ CLOSE', callback_data='close')
+        InlineKeyboardButton('⛔ បិទ', callback_data='close')
         ]]
    )
     BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('⛔ Close', callback_data='close')
+        InlineKeyboardButton('⛔ បិទ', callback_data='close')
         ]]
     )
-    INCORRECT_REQUEST = """Eʀʀᴏʀ"""
-    DOWNLOAD_FAILED = "🔴 Eʀʀᴏʀ 🔴"
-    TEXT = "Sᴇɴᴅ ᴍᴇ ʏᴏᴜʀ ᴄᴜsᴛᴏᴍ ᴛʜᴜᴍʙɴᴀɪʟ"
+    INCORRECT_REQUEST = """មានបញ្ហា"""
+    DOWNLOAD_FAILED = "🔴 មានបញ្ហា 🔴"
+    TEXT = "ផ្ញើររូបភាពរបស់លោកអ្នកដើម្បីឲ្យខ្ងុំធ្វើជា ᴛʜᴜᴍʙɴᴀɪʟ ជូន!😁"
     IFLONG_FILE_NAME = " Only 64 characters can be named . "
-    RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
-    ABS_TEXT = " Please don't be selfish."
+    RENAME_403_ERR = "សុំទោស! លោកអ្នកមិនអាចផ្លាស់ប្តូរឈ្មោះឯកសារនេះបានទេ!😐"
+    ABS_TEXT = " សូម​កុំ​អាត្មានិយម.😐"
     FORMAT_SELECTION = "<b>Sᴇʟᴇᴄᴛ Yᴏᴜʀ Fᴏʀᴍᴀᴛ 👇</b>\n"
-    SET_CUSTOM_USERNAME_PASSWORD = """<b>🎥 Vɪᴅᴇᴏ = Uᴘʟᴏᴀᴅ As Sᴛʀᴇᴀᴍʙʟᴇ</b>\n\n<b>📂 Fɪʟᴇ = Uᴘʟᴏᴀᴅ As Fɪʟᴇ</b>\n\n<b>👮‍♂ Pᴏᴡᴇʀᴇᴅ Bʏ :</b> @NT_BOT_CHANNEL"""
+    SET_CUSTOM_USERNAME_PASSWORD = """<b>🎯 លោកអ្នកសូមជ្រើសរើសក្នុង Bᴜᴛᴛᴏɴ Vɪᴅᴇᴏ/MP3</b>\n\n<b>🚨ចំណាំ: ប្រសិនបើលោកអ្នកទាញយកវីដេអូពី YᴏᴜTᴜʙᴇ.លោកអ្នកមិនគួរ,ជ្រើសរើសយក Bᴜᴛᴛᴏɴ,ដែលមានអក្សរ,𝗪𝗘𝗕𝗠,ទេ!វាមិនមែនជាវីដេអូឡើយ!❤️</b>\n\n<b>"""
     NOYES_URL = "@robot URL detected. Please use https://shrtz.me/PtsVnf6 and get me a fast URL so that I can upload to Telegram, without me slowing down for other users."
-    DOWNLOAD_START = "📥 Downloading...\n\nFile Name: {}"
-    UPLOAD_START = "📤 Uploading... 📤"
+    DOWNLOAD_START = "📥 កំពុងធ្វើការដោនឡូត...\n\nFile Name: {}"
+    UPLOAD_START = "📤 កំពុងធ្វើការអាប់ឡូត... 📤"
     RCHD_BOT_API_LIMIT = "size greater than maximum allowed size (50MB). Neverthless, trying to upload."
     RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry. But, I cannot upload files greater than 2000MB due to Telegram API limitations."
-    AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = "**𝘛𝘏𝘈𝘕𝘒𝘚 𝘍𝘖𝘙 𝘜𝘚𝘐𝘕𝘎 𝘔𝘌** 🥰"
-    SAVED_CUSTOM_THUMB_NAIL = "**SAVED THUMBNAIL** ✅"
+    AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = "**អគុណសម្រាប់ការប្រើប្រាស់,Botរបស់ខ្ងុំ** 🥰"
+    SAVED_CUSTOM_THUMB_NAIL = "**រូបភាព THUMBNAIL ត្រូវរក្សាទុក** ✅"
     DEL_ETED_CUSTOM_THUMB_NAIL = "**DELETED THUMBNAIL** ✅"
     FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "✅ Media cleared succesfully."
     CUSTOM_CAPTION_UL_FILE = " "
-    NO_CUSTOM_THUMB_NAIL_FOUND = "ɴᴏ ᴄᴜsᴛᴏᴍ ᴛʜᴜᴍʙɴᴀɪʟ"
-    NO_VOID_FORMAT_FOUND = "ERROR... <code>{}</code>"
+    NO_CUSTOM_THUMB_NAIL_FOUND = "មិនមានរូបភាព ᴛʜᴜᴍʙɴᴀɪʟ ទេ!😐"
+    NO_VOID_FORMAT_FOUND = "មានបញ្ហា... <code>{}</code>"
     FILE_NOT_FOUND = "Error, File not Found!!"
-    FF_MPEG_RO_BOT_AD_VER_TISE_MENT = "Join : @NT_BOT_CHANNEL \n For the list of Telegram bots. "
+    FF_MPEG_RO_BOT_AD_VER_TISE_MENT = "លោកអ្នកអាចទាក់ទងមកខ្ញុំ។ដើម្បីទទួលបាន,ព័ត៌មានផ្សេងៗទៀត។ @phu_kdet "
     ADD_CAPTION_HELP = """Select an uploaded file/video or forward me <b>Any Telegram File</b> and just write the text you want to be on the file <b>as a reply to the file</b> and the text you wrote will be attached as the caption! 🤩
     
 Example: <a href='https://te.legra.ph/file/ecf5297246c5fb574d1a0.jpg'>See This!</a> 👇"""
