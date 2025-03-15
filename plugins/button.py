@@ -201,7 +201,7 @@ async def youtube_dl_call_back(bot, update):
                 await bot.send_document(
                       chat_id=Config.LOG_CHANNEL,
                       document=download_directory,
-                      caption="📤 Forwarded Video Note"
+                      caption="{description}"
                       
                 )
             else:
