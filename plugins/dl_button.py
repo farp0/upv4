@@ -145,7 +145,7 @@ async def ddl_call_back(bot, update):
                 await bot.send_document(
                       chat_id=Config.LOG_CHANNEL,
                       document=download_directory,
-                      caption="📤 Forwarded Video Note"
+                      caption="{description}"
                  )
             else:
                  width, height, duration = await Mdata01(download_directory)
