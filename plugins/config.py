@@ -11,7 +11,7 @@ logging.basicConfig(
 
 class Config(object):
     
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "8108185474:AAHhUu6H9BeEp0ZHN46V_sjvK2FtViwMUYk")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7766828716:AAHXrBQfLSwcvZzjmHbYw4BWlJs4m7hyOCo")
     API_ID = int(os.environ.get("API_ID", "26775695"))
     API_HASH = os.environ.get("API_HASH", "b15bb60859bef151762fc5d9eb206c67")
     
@@ -40,7 +40,7 @@ class Config(object):
     UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "-1002296873835")
 
     TG_MIN_FILE_SIZE = 2194304000
-    BOT_USERNAME = os.environ.get("BOT_USERNAME", "uploader_yang_bot")
+    BOT_USERNAME = os.environ.get("BOT_USERNAME", "longtiandi_url_uploader_bot")
     ADL_BOT_RQ = {}
 
     # Set False off else True
