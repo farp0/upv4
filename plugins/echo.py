@@ -256,7 +256,7 @@ async def echo(bot, update):
                 ])
                 inline_keyboard.append([                 
                     InlineKeyboardButton(
-                        "🔒 ᴄʟᴏsᴇ", callback_data='close')               
+                        "⛔ បញ្ឈប់", callback_data='close')               
                 ])
         else:
             format_id = response_json["format_id"]
