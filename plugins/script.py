@@ -124,7 +124,7 @@ Usᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴋɴᴏᴡ ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍ
     FORMAT_SELECTION = "<b>🎯 លោកអ្នកសូមជ្រើសរើសក្នុង Bᴜᴛᴛᴏɴ Vɪᴅᴇᴏ/MP3 👇</b>\n"
     SET_CUSTOM_USERNAME_PASSWORD = """<b>🚨ចំណាំ: ប្រសិនបើលោកអ្នកទាញយកវីដេអូពី YᴏᴜTᴜʙᴇ.លោកអ្នកមិនគួរ,ជ្រើសរើសយក Bᴜᴛᴛᴏɴ,ដែលមានអក្សរ,𝗪𝗘𝗕𝗠,ទេ!វាមិនមែនជាវីដេអូឡើយ!❤️</b>\n\n<b>"""
     NOYES_URL = "@robot URL detected. Please use https://shrtz.me/PtsVnf6 and get me a fast URL so that I can upload to Telegram, without me slowing down for other users."
-    DOWNLOAD_START = "📥 កំពុងធ្វើការដោនឡូត...\n\nFile Name: {}"
+    DOWNLOAD_START = "📥 កំពុងធ្វើការដោនឡូត...\n\nឈ្មោះឯកសារ: {}"
     UPLOAD_START = "📤 កំពុងធ្វើការអាប់ឡូត... 📤"
     RCHD_BOT_API_LIMIT = "size greater than maximum allowed size (50MB). Neverthless, trying to upload."
     RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry. But, I cannot upload files greater than 2000MB due to Telegram API limitations."
