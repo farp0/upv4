@@ -34,7 +34,7 @@ Usᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴋɴᴏᴡ ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍ
 ├📢 **Fʀᴀᴍᴇᴡᴏʀᴋ** : <a href=https://docs.pyrogram.org/>Pʏʀᴏꜰᴏʀᴋ 2.3.58</a>
 ├💮 **Lᴀɴɢᴜᴀɢᴇ** : <a href=https://www.python.org>Pʏᴛʜᴏɴ 3.13.2</a>
 ├💾 **Dᴀᴛᴀʙᴀsᴇ** : <a href=https://cloud.mongodb.com>MᴏɴɢᴏDB</a>
-├🚨 **Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ** : <a href=https://t.me/AnimationTV_Group>Nᴛ Sᴜᴘᴘᴏʀᴛ</a>
+├🚨 **Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ** : <a href=https://t.me/AnimationTV_Group>Sᴜᴘᴘᴏʀᴛ</a>
 ├🥏 **Cʜᴀɴɴᴇʟ** : <a href=https://t.me/AnimationTV_Clouds>Cʜᴀɴɴᴇʟ</a>
 ├👨‍💻 **Cʀᴇᴀᴛᴇʀ** :  @phu_kdet
 ╰───────────────⍟
@@ -53,8 +53,7 @@ Usᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴋɴᴏᴡ ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍ
     PROGRES = """
 {}
 {}
-
-**Powered by @phu_kdet**"""
+"""
 
 
     INFO_TEXT = """
@@ -75,10 +74,10 @@ Usᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴋɴᴏᴡ ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍ
         [[
         InlineKeyboardButton('🛠️ ការកំណត់', callback_data='OpenSettings')
         ],[
-        InlineKeyboardButton('🤝 មានចំ', callback_data='help'),
-        InlineKeyboardButton('🎯 ABOUT', callback_data='about')
+        InlineKeyboardButton('🤝 មានចម្ងល់', callback_data='help'),
+        InlineKeyboardButton('🎯 អំពី', callback_data='about')
         ],[
-        InlineKeyboardButton('⛔ CLOSE', callback_data='close')
+        InlineKeyboardButton('⛔ បិទ', callback_data='close')
         ]]
     )
     HELP_BUTTONS = InlineKeyboardMarkup(
