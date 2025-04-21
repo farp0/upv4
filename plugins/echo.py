@@ -31,7 +31,6 @@ from plugins.database.add import AddUser
 from pyrogram.types import Thumbnail
 
 
-cookies_file = "cookies.txt"
 
 @Client.on_message(filters.private & filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
@@ -123,7 +122,6 @@ async def echo(bot, update):
             "--allow-dynamic-mpd",
             "--no-check-certificate",
             "-j",
-            "--cookies", cookies_file,
             url,
             "--proxy", Config.HTTP_PROXY
         ]
@@ -133,7 +131,6 @@ async def echo(bot, update):
             "--no-warnings",
             "--allow-dynamic-mpd",
             "--no-check-certificate",
-            "--cookies", cookies_file,
             "-j",
             url,
             "--geo-bypass-country",
