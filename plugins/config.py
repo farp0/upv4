@@ -11,9 +11,9 @@ logging.basicConfig(
 
 class Config(object):
     
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7675355288:AAFfpULkl1w0mVmO2nrLlPNLyiXnDC13N8M")
-    API_ID = int(os.environ.get("API_ID", "17822365"))
-    API_HASH = os.environ.get("API_HASH", "b561a326f3d3e7e6ef41cf7d57ab8fb3")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7766828716:AAHXrBQfLSwcvZzjmHbYw4BWlJs4m7hyOCo")
+    API_ID = int(os.environ.get("API_ID", "26775695"))
+    API_HASH = os.environ.get("API_HASH", "b15bb60859bef151762fc5d9eb206c67")
     
     DOWNLOAD_LOCATION = "./DOWNLOADS"
     MAX_FILE_SIZE = 2194304000
@@ -33,14 +33,14 @@ class Config(object):
 
     DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://pangphu9:0pSRO3UHIoH5ouAx@cluster0.ipqp2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002034379731"))
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002342176606"))
     LOGGER = logging
-    OWNER_ID = int(os.environ.get("OWNER_ID", "8079310657"))
+    OWNER_ID = int(os.environ.get("OWNER_ID", "1200411908"))
     SESSION_NAME = "UploaderXNTBot"
-    UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "-1002296873835")
+    UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "-1002034379731")
 
     TG_MIN_FILE_SIZE = 2194304000
-    BOT_USERNAME = os.environ.get("BOT_USERNAME", "URL_Uploader_QingYang_Bot")
+    BOT_USERNAME = os.environ.get("BOT_USERNAME", "longtiandi_url_uploader_bot")
     ADL_BOT_RQ = {}
 
     # Set False off else True
