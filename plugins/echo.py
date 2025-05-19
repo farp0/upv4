@@ -61,7 +61,7 @@ async def echo(bot, update):
                 quote=True
             )
         except Exception as error:
-            #print(error)
+            print(error)
     if not update.from_user:
         return await update.reply_text("I don't know about you sar :(")
     await AddUser(bot, update)
