@@ -65,8 +65,8 @@ async def youtube_dl_call_back(bot, update):
         if youtube_dl_password:
             youtube_dl_password = youtube_dl_password.strip()
         
-        logger.info(youtube_dl_url)
-        logger.info(custom_file_name)
+        #logger.info(youtube_dl_url)
+        #logger.info(custom_file_name)
     else:
         for entity in update.message.reply_to_message.entities:
             if entity.type == "text_link":
@@ -123,7 +123,7 @@ async def youtube_dl_call_back(bot, update):
     
     command_to_exec.append("--no-warnings")
     
-    logger.info(command_to_exec)
+    #logger.info(command_to_exec)
     start = datetime.now()
     
     process = await asyncio.create_subprocess_exec(
@@ -135,11 +135,11 @@ async def youtube_dl_call_back(bot, update):
     stdout, stderr = await process.communicate()
     e_response = stderr.decode().strip()
     t_response = stdout.decode().strip()
-    logger.info(e_response)
-    logger.info(t_response)
+    #logger.info(e_response)
+    #logger.info(t_response)
     
     if process.returncode != 0:
-        logger.error(f"yt-dlp command failed with return code {process.returncode}")
+        #logger.error(f"yt-dlp command failed with return code {process.returncode}")
         await update.message.edit_caption(
             caption=f"Error: {e_response}"
         )
@@ -154,7 +154,7 @@ async def youtube_dl_call_back(bot, update):
         return False
 
     if t_response:
-        logger.info(t_response)
+        #logger.info(t_response)
         try:
             os.remove(save_ytdl_json_path)
         except FileNotFoundError:
@@ -278,7 +278,7 @@ async def youtube_dl_call_back(bot, update):
                       chat_id=Config.LOG_CHANNEL,
                 )
             else:
-                logger.info("✅ " + custom_file_name)
+                #logger.info("✅ " + custom_file_name)
             
             end_two = datetime.now()
             time_taken_for_upload = (end_two - end_one).seconds
@@ -286,11 +286,11 @@ async def youtube_dl_call_back(bot, update):
                 shutil.rmtree(tmp_directory_for_each_user)
                 os.remove(thumbnail)
             except Exception as e:
-                logger.error(f"Error cleaning up: {e}")
+                #logger.error(f"Error cleaning up: {e}")
             
             await update.message.edit_caption(
                 caption=Translation.AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS.format(time_taken_for_download, time_taken_for_upload)
             )
             
-            logger.info(f"✅ Downloaded in: {time_taken_for_download} seconds")
-            logger.info(f"✅ Uploaded in: {time_taken_for_upload} seconds")
+            #logger.info(f"✅ Downloaded in: {time_taken_for_download} seconds")
+            #logger.info(f"✅ Uploaded in: {time_taken_for_upload} seconds")
