@@ -4,8 +4,15 @@
 
 
 import os
+import logging
 from plugins.config import Config
 from pyrogram import Client
+
+logging.getLogger("pyrogram.crypto.aes").setLevel(logging.WARNING)
+logging.getLogger("pyrogram.connection.connection").setLevel(logging.WARNING)
+logging.getLogger("pyrogram.session").setLevel(logging.WARNING)
+
+
 
 if __name__ == "__main__" :
     
