@@ -278,7 +278,7 @@ async def youtube_dl_call_back(bot, update):
                       chat_id=Config.LOG_CHANNEL,
                 )
             else:
-                #logger.info("✅ " + custom_file_name)
+                logger.info("✅ " + custom_file_name)
             
             end_two = datetime.now()
             time_taken_for_upload = (end_two - end_one).seconds
