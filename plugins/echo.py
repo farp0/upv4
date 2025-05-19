@@ -61,7 +61,7 @@ async def echo(bot, update):
                 quote=True
             )
         except Exception as error:
-            print(error)
+            #print(error)
     if not update.from_user:
         return await update.reply_text("I don't know about you sar :(")
     await AddUser(bot, update)
@@ -71,13 +71,13 @@ async def echo(bot, update):
             return
 
 
-    logger.info(update.from_user)
+    #logger.info(update.from_user)
     url = update.text
     youtube_dl_username = None
     youtube_dl_password = None
     file_name = None
 
-    print(url)
+    #print(url)
     if "|" in url:
         url_parts = url.split("|")
         if len(url_parts) == 2:
@@ -105,8 +105,8 @@ async def echo(bot, update):
             youtube_dl_username = youtube_dl_username.strip()
         if youtube_dl_password is not None:
             youtube_dl_password = youtube_dl_password.strip()
-        logger.info(url)
-        logger.info(file_name)
+        #logger.info(url)
+        #logger.info(file_name)
     else:
         for entity in update.entities:
             if entity.type == "text_link":
@@ -143,7 +143,7 @@ async def echo(bot, update):
     if youtube_dl_password is not None:
         command_to_exec.append("--password")
         command_to_exec.append(youtube_dl_password)
-    logger.info(command_to_exec)
+    #logger.info(command_to_exec)
     chk = await bot.send_message(
             chat_id=update.chat.id,
             text=f'បតកំពុងធ្វើការស្វែងរក...⌛',
@@ -159,7 +159,7 @@ async def echo(bot, update):
     # Wait for the subprocess to finish
     stdout, stderr = await process.communicate()
     e_response = stderr.decode().strip()
-    logger.info(e_response)
+    #logger.info(e_response)
     t_response = stdout.decode().strip()
     if e_response and "nonnumeric port" not in e_response:
         # logger.warn("Status : FAIL", exc.returncode, exc.output)
