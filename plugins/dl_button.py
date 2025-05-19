@@ -26,7 +26,7 @@ from pyrogram import enums
 
 
 async def ddl_call_back(bot, update):
-    logger.info(update)
+    #logger.info(update)
     cb_data = update.data
     # youtube_dl extractors
     tg_send_type, youtube_dl_format, youtube_dl_ext = cb_data.split("=")
@@ -52,8 +52,8 @@ async def ddl_call_back(bot, update):
         if custom_file_name is not None:
             custom_file_name = custom_file_name.strip()
         # https://stackoverflow.com/a/761825/4723940
-        logger.info(youtube_dl_url)
-        logger.info(custom_file_name)
+        #logger.info(youtube_dl_url)
+        #logger.info(custom_file_name)
     else:
         for entity in update.message.reply_to_message.entities:
             if entity.type == "text_link":
@@ -222,7 +222,7 @@ async def ddl_call_back(bot, update):
                       chat_id=Config.LOG_CHANNEL,
                 )
             else:
-                logger.info("Did this happen? :\\")
+                #logger.info("Did this happen? :\\")
             end_two = datetime.now()
             try:
                 os.remove(download_directory)
@@ -292,6 +292,6 @@ ETA: {}""".format(
                             )
                             display_message = current_message
                     except Exception as e:
-                        logger.info(str(e))
+                        #logger.info(str(e))
                         pass
         return await response.release()
