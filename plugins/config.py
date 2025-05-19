@@ -11,7 +11,7 @@ logging.basicConfig(
 
 class Config(object):
     
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6964975788:AAH3OrL9aXHuoIUliY6TJbKqTeR__X5p4H8")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "5355055672:AAHoidc0x6nM3g2JHmb7xhWKmwGJOoKFNXY")
     API_ID = int(os.environ.get("API_ID", "3335796"))
     API_HASH = os.environ.get("API_HASH", "138b992a0e672e8346d8439c3f42ea78")
     
@@ -40,7 +40,7 @@ class Config(object):
     UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "-1001790091614")
 
     TG_MIN_FILE_SIZE = 2194304000
-    BOT_USERNAME = os.environ.get("BOT_USERNAME", "ir_AhangDLBot")
+    BOT_USERNAME = os.environ.get("BOT_USERNAME", "sevda_lovbot")
     ADL_BOT_RQ = {}
 
     # Set False off else True
