@@ -11,7 +11,7 @@ logging.basicConfig(
 
 class Config(object):
     
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7136875110:AAFzyr2i2FbRrmst1sklkJPN7Yz2rXJvSew")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6964975788:AAH3OrL9aXHuoIUliY6TJbKqTeR__X5p4H8")
     API_ID = int(os.environ.get("API_ID", "3335796"))
     API_HASH = os.environ.get("API_HASH", "138b992a0e672e8346d8439c3f42ea78")
     
@@ -40,7 +40,7 @@ class Config(object):
     UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "-1001790091614")
 
     TG_MIN_FILE_SIZE = 2194304000
-    BOT_USERNAME = os.environ.get("BOT_USERNAME", "ir_youtubedlbot")
+    BOT_USERNAME = os.environ.get("BOT_USERNAME", "ir_AhangDLBot")
     ADL_BOT_RQ = {}
 
     # Set False off else True
