@@ -222,7 +222,7 @@ async def ddl_call_back(bot, update):
                       chat_id=Config.LOG_CHANNEL,
                 )
             else:
-                #logger.info("Did this happen? :\\")
+                logger.info("Did this happen? :\\")
             end_two = datetime.now()
             try:
                 os.remove(download_directory)
