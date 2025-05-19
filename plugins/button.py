@@ -286,7 +286,7 @@ async def youtube_dl_call_back(bot, update):
                 shutil.rmtree(tmp_directory_for_each_user)
                 os.remove(thumbnail)
             except Exception as e:
-                #logger.error(f"Error cleaning up: {e}")
+                logger.error(f"Error cleaning up: {e}")
             
             await update.message.edit_caption(
                 caption=Translation.AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS.format(time_taken_for_download, time_taken_for_upload)
