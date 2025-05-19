@@ -1,10 +1,47 @@
-FROM python:3.9-slim
+# Use official Python base image
+FROM python:3.10-slim
+
+# Set working directory
 WORKDIR /app
-RUN apt-get update && \
-    apt-get install -y ffmpeg jq python3-dev && \
-    rm -rf /var/lib/apt/lists/*
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    gcc \
+    ffmpeg \
+    libffi-dev \
+    build-essential \
+    && apt-get clean
+
+# Install Python packages
+RUN pip install --no-cache-dir \
+    aiohttp \
+    hachoir \
+    numpy \
+    Pillow \
+    requests \
+    pyrogram \
+    tgcrypto \
+    olefile \
+    motor \
+    pytz \
+    utils \
+    pymongo \
+    pyrofork \
+    dnspython \
+    psutil \
+    loggers \
+    filetype \
+    tldextract \
+    ffmpeg-python \
+    aiofiles \
+    pyromod \
+    yt-dlp \
+    lk21 \
+    pytube \
+    flask
+
+# Copy your app code into the container (if needed)
 COPY . .
-RUN python3 -m pip check yt-dlp
+
+# Default command (you can replace with your script)
 CMD ["python3", "bot.py"]
